@@ -16,6 +16,7 @@ import {
 } from './handlers/proxyHandlers';
 import { fetchBinanceConnectQuote } from './quoterFetchers';
 import { fetchIpDetails, fetchMercuryoAvailability } from './ipFetchers';
+import { MercuryoTestWebhook, MoonPayTestWebhook } from './webhookCallbacks/webhookCallbacks';
 
 const router: Router = express.Router();
 
@@ -33,5 +34,10 @@ router.route('/fetch-mercuryo-availability').get(fetchMercuryoIpAvailability);
 router.route('/user-ip').get(fetchIpDetails);
 router.route('/fetch-provider-quotes').post(fetchProviderQuotes);
 router.route('/fetch-provider-availability').post(fetchProviderAvailability);
+
+//webhooks
+router.route('/webhook').post(MoonPayTestWebhook)
+router.route('/webhook-mercuryo').post(MercuryoTestWebhook)
+
 
 export default router;
