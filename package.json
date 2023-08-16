@@ -16,13 +16,8 @@
   },
   "devDependencies": {
     "@types/node": "^16.11.13",
-    "@types/pg": "^8.6.5",
-    "@typescript-eslint/eslint-plugin": "^5.5.0",
-    "@typescript-eslint/parser": "^5.5.0",
-    "eslint": "^8.5.0",
     "nodemon": "^2.0.20",
     "prettier": "^2.5.1",
-    "typechain": "^8.1.0"
   },
   "dependencies": {
     "@types/cors": "^2.8.12",

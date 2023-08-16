@@ -4,5 +4,4 @@ node_modules/
 config.env
 
 /dist
-.env
 .env.local
