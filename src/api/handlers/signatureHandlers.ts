@@ -70,12 +70,12 @@ export const generateMoonPaySig = async (req: Request, res: Response, next: Next
     const supportedTokens = moonPayParams.showOnlyCurrencies
   const encodedCurrencyList = encodeURIComponent(supportedTokens);
   console.log(encodedCurrencyList)
-  const moonPayTradeUrl = `&theme=${moonPayParams.theme}&colorCode=%2382DBE3&lockAmount=true&currencyCode=${moonPayParams.defaultCurrencyCode}&baseCurrencyCode=${moonPayParams.baseCurrencyCode}&baseCurrencyAmount=${moonPayParams.baseCurrencyAmount}&walletAddress=${moonPayParams.walletAddress}&showOnlyCurrencies=${encodedCurrencyList}`
+  const moonPayTradeUrl = `&theme=${moonPayParams.theme}&colorCode=%2382DBE3&lockAmount=true&currencyCode=${moonPayParams.defaultCurrencyCode}&baseCurrencyCode=${moonPayParams.baseCurrencyCode}&baseCurrencyAmount=${moonPayParams.baseCurrencyAmount}&walletAddress=${moonPayParams.walletAddress}`
 
     const originalUrl = `${MOONPAY_URL}${moonPayTradeUrl}`;
 
     const signature = crypto
-      .createHmac('sha256', config.moonpaySecretKey)
+      .createHmac('sha256', 'sk_live_FwlMuWmSACR3MNFA9mwrY8yVswPBpK')
       .update(new URL(originalUrl).search)
       .digest('base64')
 
